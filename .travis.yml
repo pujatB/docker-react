@@ -1,16 +1,15 @@
-language: generic
-
 # superuser permission is required to have this build
 sudo: required
 
+language: generic
 services:
-  # Telling the docker we need docker to build
+  # Telling  we need docker to build
   - docker  
 
 
 # steps needed to do before test and deploy happens
 before_install:
-  # pujabapat/docker-react - docker ussername and the github repo name
+  # pujabapat/docker-react - docker username and the github repo name
   - docker build -t pujabapat/docker-react -f Dockerfile.dev .
 
 script:
@@ -25,6 +24,6 @@ deploy:
   bucket_name: "elasticbeanstalk-us-east-2-439828442360"
   bucket_path: "docker-react"
   on:
-    branch: master
+    branch: main
   access_key_id: $AWS_ACCESS_KEY
   secret_access_key: $AWS_SECRET_KEY
