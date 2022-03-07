@@ -1,0 +1,19 @@
+language: generic
+
+# superuser permission is required to have this build
+sudo: required
+
+services:
+  # Telling the docker we need docker to build
+  - docker  
+
+
+# steps needed to do before test and deploy happens
+before_install:
+  # pujabapat/docker-react - docker ussername and the github repo name
+  - docker build -t pujabapat/docker-react -f Dockerfile.dev .
+
+script:
+  - docker run -e CI-true pujabapat/docker-react npm run test
+
+
