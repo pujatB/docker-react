@@ -8,7 +8,7 @@ function App() {
         <img src={logo} className="App-logo" alt="logo" />
         <p>
           {/* Edit <code>src/App.js</code> and save to reload. */}
-          trying in the pod env !!
+          So happy everthing running now yay!!
         </p>
         <a
           className="App-link"
